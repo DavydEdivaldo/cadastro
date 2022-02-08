@@ -27,20 +27,20 @@ $(function(){
     
     //evetos de formulario
     $('form#form1').submit(function(e){
-        
+        e.preventDefault();
         var nome = $('input[name=nome]').val();
         var telefone = $('input[name=telefone]').val();
         var email = $('input[name=email]').val();
 
         if (verificarNome(nome) == false) {
             aplicarCampoInvalido($('input[name=nome]'));
-            return false;
+          //  return false;
         }else if(verificarTelefone(telefone) == false){
             aplicarCampoInvalido($('input[name=telefone]'));
-            return false;
+           // return false;
         }else if (verificarEmail(email) == false) {
             aplicarCampoInvalido($('input[name=email]'));
-            return false;
+           // return false;
         }
         else{
             alert('Enviado!')
